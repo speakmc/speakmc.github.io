@@ -1,7 +1,10 @@
-`print("12")`
+# Minecraft 命令(在我的服务器里)
 ```
-def hello():
-print("Hello, Markdown")
+/suicide
 ```
-# Minecraft 命令
+自杀
+```
+/cd
+```
+打开服务器菜单
 
