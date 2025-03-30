@@ -1,4 +1,5 @@
 # c++集
+>摘自[csdn](https://blog.csdn.net/TaopiTTT/article/details/134722601)
 ## 1.头文件
 ```c++
 #include<bits/stdc++.h>
