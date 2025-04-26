@@ -12,39 +12,74 @@
 
 <body>
   <div id="app">加载中...</div>
+  <script src="//unpkg.com/vue/dist/vue.js"></script>
+  <script src="//unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script src="//unpkg.com/docsify-demo-box-vue/dist/docsify-demo-box-vue.min.js"></script>
+  <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
+  <script src="//unpkg.com/element-ui/lib/index.js"></script>
+  <script src="//unpkg.com/element-ui/lib/umd/locale/en.js"></script>
+  <script src="//unpkg.com/vue-data-tables@3.4.4/dist/data-tables.min.js"></script>
+  <script src="//unpkg.com/json2csv@3.9.1/dist/json2csv.js"></script>
+  <script src="//unpkg.com/docsify-plugin-codefund/index.js"></script>
   <script>
     window.$docsify = {
       name: '说MC',
       repo: 'https://github.com/speakmc/speakmc.github.io',
       loadSidebar: true,
+      mergeNavbar: true,
+      loadNavbar: true,
+      subMaxLevel: 1,
+      sidebarDisplayLevel: 1,
       copyCode: {
         buttonText: '复制代码',
         errorText: '复制失败',
         successText: '复制成功',
       },
+      count: {
+        countable: true,
+        position: "top",
+        margin: "10px",
+        float: "right",
+        fontsize: "0.9em",
+        color: "red",
+        language: "chinese",
+        localization: {
+          words: "",
+          minute: "",
+        },
+        isExpected: true,
+      },
       search: {
-        placeholder: '搜索',
-        paths: [
-        '/',            // => /README.md
-        '/zh-cn/',       // => /guide.md
-        '/zh-cn/minecraftcommand', // => /get-started.md
-        '/zh-cn/c++command',      // => /zh-cn/README.md
-        ],
-      }
+        depth: 6,
+        noData: "没有搜到!",
+        placeholder: "搜索...",
+        // 避免搜索索引冲突,同一域下的多个网站之间
+        namespace: "website-1",
+      },
+      auto2top: true,
+      plugins: [
+        EditOnGithubPlugin.create(
+          'https://github.com/speakmc/speakmc.github.io/tree/main/',
+          null,
+          "在Github上编辑"
+        ),
+        DocsifyCodefund.create(15)
+      ]
     }
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse@1"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-auto-sidebar@1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-count@latest/dist/countable.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/emoji.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/external-script.js"></script>
   <script src="//polyfill.io/v3/polyfill.min.js?features=String.prototype.normalize"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-pagination"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-themeable@0"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-tabs"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-katex"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-yaml.min.js"></script>
@@ -55,8 +90,8 @@
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-sql.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-markdown.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-cpp.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
-
+  <script src="//unpkg.com/docsify/lib/plugins/external-script.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
 </body>
 
 </html>
